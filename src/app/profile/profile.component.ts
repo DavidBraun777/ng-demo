@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../core/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+    constructor( 
+      private authservice: AuthService, 
+      public afAuth: AngularFireAuth
+    ) {}
+    ngOnInit() {}
+    logout() {
+      this.authservice.logout();
+    }
 }
