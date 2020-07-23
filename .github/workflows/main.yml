@@ -39,6 +39,9 @@ jobs:
   deploy:
     name: Deploy to firebase
     runs-on: ubuntu-latest
+    # only run if build job complte successfully 
+    needs: [build]
+    
     steps:
       # building the app before deploy
       - uses: actions/checkout@master
@@ -49,7 +52,7 @@ jobs:
       - run: npm install angular@latest
       - run: npm install -g @angular/cli
       - run: ng build
-      # ddeploy the angular app to firebase
+      # deploy the angular app to firebase
       - name: Deploy angular app to Firebase
         uses: w9jds/firebase-action@master
         with:
