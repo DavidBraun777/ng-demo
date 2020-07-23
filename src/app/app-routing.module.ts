@@ -1,5 +1,6 @@
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/Operators';
+//import { Observable } from 'rxjs';
+import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
