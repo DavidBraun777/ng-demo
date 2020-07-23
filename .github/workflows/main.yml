@@ -46,7 +46,9 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install
-      - run: npm run build --prod
+      - run: npm install angular@latest
+      - run: npm install -g @angular/cli
+      - run: ng build
       # ddeploy the angular app to firebase
       - name: Deploy angular app to Firebase
         uses: w9jds/firebase-action@master
